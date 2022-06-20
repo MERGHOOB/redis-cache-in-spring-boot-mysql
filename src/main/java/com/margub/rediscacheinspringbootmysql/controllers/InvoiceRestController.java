@@ -24,10 +24,11 @@ public class InvoiceRestController {
     InvoiceService invoiceService;
 
     @PostMapping("/saveInv")
-    public Invoice saveInvoice(@RequestBody @NotNull Invoice invoice){
+    public Invoice saveInvoice(@RequestBody @NotNull Invoice invoice) {
 
         return invoiceService.saveInvoice(invoice);
     }
+
     @GetMapping("/allInv")
     public ResponseEntity<List<Invoice>> getAllInvoices() {
         return ResponseEntity.ok(invoiceService.getAllInvoices());
@@ -39,7 +40,7 @@ public class InvoiceRestController {
     }
 
     @PutMapping("/modify/{id}")
-    public Invoice updateInvoice(@RequestBody Invoice invoice, @PathVariable Integer id){
+    public Invoice updateInvoice(@RequestBody Invoice invoice, @PathVariable Integer id) {
         return invoiceService.updateInvoice(invoice, id);
     }
 
